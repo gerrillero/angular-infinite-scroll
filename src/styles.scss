@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+
+.product-card {
+  .card-img-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+}
+
