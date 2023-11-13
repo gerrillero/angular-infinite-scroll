@@ -25,9 +25,10 @@
       </div>
     </div>
     <p class="text-center my-3" *ngIf="!paginator.hasMorePages">You have reached the end of catalog.</p>
+  
+    <p class="text-center my-3" *ngIf="loading$ | async">Loading...</p>
   </div>
 
-  <p class="text-center my-3" *ngIf="loading$ | async">Loading...</p>
 </div>
 
 <div> 
