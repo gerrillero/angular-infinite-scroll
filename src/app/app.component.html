@@ -1,35 +1,37 @@
 <div > 
-  Test Top
+  <h1 class="my-4">Images</h1>
 </div>
 
-<div class="container">
-  <h1 class="my-4">Products</h1>
-  <div class="products-list" style="height: 500px; overflow: auto;"
-       *ngIf="paginator$ | async as paginator"
-       infiniteScroll
-       [scrollWindow]="false"
-       [infiniteScrollDistance]="0"
-       (scrolled)="loadMoreProducts(paginator)">
-    <div class="row gy-4">
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let product of paginator.items">
-        <div class="card product-card">
-          <div class="card-img-top">
-            <img [src]="product.thumbnail" [alt]="product.title">
-          </div>
-          <div class="card-body">
-            <h2 class="h5 text-truncate">{{product.title}}</h2>
-            <p class="mb-4">${{product.price}}</p>
-            <button class="btn btn-primary w-100">Add to cart</button>
-          </div>
-        </div>
+<!-- <div class="image-container" style="height: 500px; overflow: auto;"
+      infiniteScroll
+      [scrollWindow]="false"
+      [infiniteScrollDistance]="0"
+      (scrolled)="loadMoreImages()">
+    <div class="item" *ngFor="let item of images">
+      <div class="thumbnail">
+        <img [src]="item.src.small" [alt]="item.alt" />
       </div>
+      <div class="info">egjs</div>
     </div>
-    <p class="text-center my-3" *ngIf="!paginator.hasMorePages">You have reached the end of catalog.</p>
-  
-    <p class="text-center my-3" *ngIf="loading$ | async">Loading...</p>
-  </div>
+</div> -->
 
-</div>
+<ul class="gallery caption-1"  style="height: 500px; overflow: auto;"
+infiniteScroll
+[scrollWindow]="false"
+[infiniteScrollDistance]="0"
+(scrolled)="loadMoreImages()">
+  <li *ngFor="let item of images">
+    <figure>
+    <a href="#">
+      <img [src]="item.src.tiny" [alt]="item.alt" />
+      <figcaption>
+        <h1>Image Title</h1>
+        <p>By: Someone</p>
+      </figcaption>
+    </a>
+    </figure>
+  </li>
+</ul>
 
 <div> 
   Test Bottom
